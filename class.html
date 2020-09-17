@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            table {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                margin-left: 0.4rem;
+                margin-right: 0.5rem;
+            }
+            td,
+            th {
+                border: 1px solid #ddd;
+                text-align: left;
+                padding: 8px;
+            }
+            tr:nth-child(even) {
+                background: #ddd;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Company Name</th>
+                        <th>Email</th>
+                        <th>Phone No.</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody id="companyInfo"></tbody>
+            </table>
+        </div>
+
+        <script>
+            const company = [
+                {
+                    "name": "Google",
+                    "email": "info@google.com",
+                    "phone": "+164365320809",
+                    "location": "Los Angeles"
+                },
+                {
+                    "name": "Apple",
+                    "email": "info@apple.com",
+                    "phone": "+311365320809",
+                    "location": "Hong kong"
+                },
+                {
+                    "name": "Zoom",
+                    "email": "info@zoom.com",
+                    "phone": "+16165650809",
+                    "location": "USA"
+                },
+                {
+                    "name": "Bascom",
+                    "email": "info@bascom.com",
+                    "phone": "+2348145230338",
+                    "location": "Nigeria"
+                },
+                {
+                    "name": "Twitter",
+                    "email": "info@tweet.com",
+                    "phone": "+1646535414384",
+                    "location": "Los Angeles"
+                }
+            ];
+
+            var tableContent = document.getElementById("companyInfo");
+            var companyTableContent = "";
+
+            for (let i = 0; i <= company.length; i++) {
+                companyTableContent += `
+                <tr>
+                    <td>${i++}</td>
+                    <td>${company[i].name}</td>
+                    <td>${company[i].email}</td>
+                    <td>${company[i].phone}</td>
+                    <td>${company[i].location}</td>
+                </tr>
+            `;
+                tableContent.innerHTML = companyTableContent;
+            }
+        </script>
+    </body>
+</html>
